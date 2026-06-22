@@ -44,3 +44,59 @@ The project generates a future sales prediction graph to visualize estimated sal
 
 ```bash
 git clone https://github.com/boomirosh/bigmart_sales_prediction_usingML.git
+
+2. Move into the project folder
+
+```bash
+cd bigmart-sales-prediction
+```
+
+3. Install required libraries
+
+```bash
+pip install numpy matplotlib joblib tkinter
+```
+
+4. Make sure the project files are available
+
+```text
+BigMart-Sales-Prediction/
+│
+├── bigmart_model
+├── BigMart.ipynb
+├── Big Mart Sales.csv
+├── README.md
+```
+
+5. Run the project
+
+```bash
+BigMart.ipynb
+```
+after running all the code which is cloned by clicking (shift + enter) then you will get the output.
+
+## 🖥️ Usage
+
+1. Enter Item MRP value
+2. Select Outlet Identifier
+3. Select Outlet Size
+4. Select Outlet Type
+5. Enter Outlet Establishment Year
+6. Click **Predict**
+7. View the predicted sales output
+8. View future sales trend graph
+
+## 📸 Output
+
+- Current Sales Prediction
+- Future Sales Trend Graph
+- Interactive GUI Interface
+
+## 🎯 Project Objective
+
+The objective of this project is to predict sales based on product and outlet characteristics using machine learning and provide a visual representation of future sales trends.
+
+## 👩‍💻 Author
+
+**S.K. Boomika**  
+MCA Student
