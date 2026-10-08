@@ -65,4 +65,3 @@ To bridge data science modeling with practical deployment by delivering multi-pl
 👩‍💻 Author
 S.K. BOOMIKA
 
-MCA Student
