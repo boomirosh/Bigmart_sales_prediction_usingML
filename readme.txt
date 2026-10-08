@@ -1,102 +1,68 @@
-# Big Mart Sales Prediction using Machine Learning
+# Big Mart Sales Prediction using Machine Learning & Multi-Platform Dashboards
 
 ## 📌 Project Overview
-This project predicts sales for Big Mart products using Machine Learning techniques. It analyzes important factors such as Item MRP, Outlet Identifier, Outlet Size, Outlet Type, and Outlet Establishment Year to estimate sales values. The project also provides a graphical visualization of future sales trends.
+This project predicts sales for Big Mart products using advanced Machine Learning techniques (Linear Regression and XGBoost). It evaluates critical features such as Item MRP, Outlet Identifier, Outlet Size, Outlet Type, and Outlet Establishment Year to forecast current sales and project a 5-year sales trajectory with confidence intervals. The project is deployed across dual interfaces—a cloud-ready **Streamlit Web Application (`app.py`)** and a **Tkinter Desktop Application (`frontend.py`)**—powered by a modular `backend.py` architecture. It also includes batch CSV processing and automated exportable CSV and PDF reporting with embedded textual summaries.
 
-## 🚀 Features
-- Predicts Big Mart sales using a trained ML model
-- User-friendly Tkinter GUI
-- Uses product and outlet information as input
-- Displays current sales prediction
-- Shows future sales trend graph using Matplotlib
-- Fast and interactive prediction system
+## 🚀 Key Features
+- **5-Year Sales Forecasting:** Generates multi-year sales trends and confidence bounds using trained ML models.
+- **What-If Price/Discount Slider:** Dynamically adjusts item MRP to analyze real-time sales impact.
+- **Batch CSV Prediction:** Supports multi-row bulk predictions with smart, flexible column-mapping logic.
+- **Automated Report Generation:** Exports detailed projection reports in CSV and PDF formats complete with embedded summary overview paragraphs.
+- **Dual Platforms:** Includes both a modern Streamlit web dashboard and an interactive Tkinter desktop interface.
+- **Feature Importance Analysis:** Visualizes what drives model predictions using feature ranking charts.
 
 ## 🛠 Technologies Used
-- Python
-- Machine Learning
-- Tkinter
-- NumPy
-- Matplotlib
-- Joblib
+- **Python**
+- **Machine Learning & Data Processing:** scikit-learn, XGBoost, pandas, NumPy, joblib
+- **Web & Desktop Frameworks:** Streamlit, Tkinter, Matplotlib
+- **Reporting & Document Generation:** ReportLab (PDF), Python standard CSV library
 
-## 📂 Dataset Features
-The project uses the following input features:
+## 📂 Dataset & Input Features
+The project analyzes the following core features:
+- `Item_MRP`: Maximum Retail Price of the product
+- `Outlet_Identifier`: Unique store ID (e.g., OUT010, OUT013, OUT027)
+- `Outlet_Size`: Scale of the store (High, Medium, Small)
+- `Outlet_Type`: Category of the store (Grocery Store, Supermarket Types 1–3)
+- `Outlet_Establishment_Year`: Year the store was established
 
-- Item_MRP
-- Outlet_Identifier
-- Outlet_Size
-- Outlet_Type
-- Outlet_Establishment_Year
-
-## ⚙️ Working Process
-1. User enters product and outlet details.
-2. Input data is converted into numerical format.
-3. The trained machine learning model loads using Joblib.
-4. The model predicts current sales.
-5. Future sales trends are generated and displayed in a graph.
-
-## 📊 Future Sales Trend
-The project generates a future sales prediction graph to visualize estimated sales growth over the next few years.
+## ⚙️ Modular Architecture & Working Process
+1. **`backend.py`**: Houses the core ML prediction logic, model loading via `joblib`, 5-year trajectory simulation, confidence intervals, and feature importance analysis.
+2. **`app.py` (Streamlit)**: Cloud-ready web dashboard providing single-item dynamic forecasting, batch CSV uploads with auto-column matching, and side-by-side report downloads.
+3. **`frontend.py` (Tkinter)**: Desktop GUI application mirroring the web dashboard capabilities for local execution.
+4. **Execution Flow**: Users supply item/outlet metrics $\rightarrow$ data passes through preprocessing and regression models $\rightarrow$ outputs generate visual charts, breakdown tables, and downloadable summary reports.
 
 ## ▶️ How to Run the Project
 
-1. Clone the repository
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/boomirosh/bigmart_sales_prediction_usingML.git](https://github.com/boomirosh/bigmart_sales_prediction_usingML.git)
+   cd bigmart_sales_prediction_usingML
 
-```bash
-git clone https://github.com/boomirosh/bigmart_sales_prediction_usingML.git
+Install required dependencies
 
-2. Move into the project folder
+Bash
+pip install streamlit pandas numpy matplotlib scikit-learn xgboost joblib reportlab
 
-```bash
-cd bigmart-sales-prediction
-```
+Run the Streamlit Web Application
 
-3. Install required libraries
+Bash
+streamlit run app.py
+(Open http://localhost:8501 in your browser)
 
-```bash
-pip install numpy matplotlib joblib tkinter
-```
+Alternatively, run the Tkinter Desktop Application
 
-4. Make sure the project files are available
+Bash
+python frontend.py
 
-```text
-BigMart-Sales-Prediction/
-│
-├── bigmart_model
-├── BigMart.ipynb
-├── Big Mart Sales.csv
-├── README.md
-```
+🖥️ Usage Guide
+Single Item & What-If Tab: Enter the item MRP, select outlet characteristics, adjust the price slider, and click PREDICT SALES to view trends and export reports.
 
-5. Run the project
+Batch CSV Prediction Tab: Upload a custom CSV file containing product records to instantly run bulk predictions.
 
-```bash
-BigMart.ipynb
-```
-after running all the code which is cloned by clicking (shift + enter) then you will get the output.
+🎯 Project Objective
+To bridge data science modeling with practical deployment by delivering multi-platform analytical dashboards that forecast retail sales performance and streamline automated reporting.
 
-## 🖥️ Usage
+👩‍💻 Author
+S.K. BOOMIKA
 
-1. Enter Item MRP value
-2. Select Outlet Identifier
-3. Select Outlet Size
-4. Select Outlet Type
-5. Enter Outlet Establishment Year
-6. Click **Predict**
-7. View the predicted sales output
-8. View future sales trend graph
-
-## 📸 Output
-
-- Current Sales Prediction
-- Future Sales Trend Graph
-- Interactive GUI Interface
-
-## 🎯 Project Objective
-
-The objective of this project is to predict sales based on product and outlet characteristics using machine learning and provide a visual representation of future sales trends.
-
-## 👩‍💻 Author
-
-**S.K. Boomika**  
 MCA Student
